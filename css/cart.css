@@ -1,0 +1,119 @@
+#summary{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: green;
+    text-align: center;
+}
+#name{
+    font-size: bold;
+    color: green;
+    margin-top: 20px;
+}
+#input-name{
+    width: 100%;
+}
+#input-address{
+    width: 100%;
+}
+#input-phone{
+    width: 100%;
+}
+#address{
+    font-size: bold;
+    color: green;
+}
+#phone{
+    font-size: bold;
+    color: green;
+}
+.address{
+    margin-top: 40px;
+}
+.phone{
+    margin-top: 40px;
+}
+#tota{
+    margin-top: 40px;
+}
+.total{
+    color: green;
+}
+
+#back{
+    height: 40px;
+    width: 16%;
+    background-color: green;
+    border-radius: 7px;
+    color: white;   
+    font-weight: bold;
+}
+#total{
+    margin-top: 80px;
+    font-weight: bold;
+    color: red;
+}
+#check{
+    height: 40px;
+    width: 10%;
+    border-radius: 6px;
+    background-color: green;
+    font-weight: bold;
+    color: red;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+#order{
+    margin-top: 30px;
+    height: 60px;
+    width: 16%;
+    background-color: green;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+}
+.back{
+    margin-top: 30px;
+}
+
+#out{
+    height: 40px;
+    width: 10%;
+    background-color: green;
+    border-radius: 7px;
+    color: white;   
+    font-weight: bold;
+}
+.out{
+    margin-top: 29px;
+}
+#cart-details{
+    font-weight: bold;
+    color: green;
+}
+@media only screen and (max-width: 768px) {
+    #order{
+        margin-top: 30px;
+        height: 60px;
+        width: 110px;
+        background-color: green;
+        border-radius: 10px;
+        font-weight: bold;
+        color: white;
+    }
+    #check{
+        height: 40px;
+        width: 40%;
+        border-radius: 6px;
+        background-color: green;
+        font-weight: bold;
+        color: red;
+    }
+    #back{
+        height: 50px;
+        width: 45%;
+        background-color: green;
+        border-radius: 7px;
+        color: white;   
+        font-weight: bold;
+    }
+}
