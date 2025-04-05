@@ -395,12 +395,30 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
+            <!-- Brand Logo -->
             <a class="navbar-brand logo" href="#">Big<span>Foodie</span></a>
+            
+            <!-- Mobile Search and Cart (visible only on mobile) -->
+            <div class="d-flex d-lg-none align-items-center mobile-icons">
+                <div class="search-container me-2">
+                    <i class="bi bi-search search-icon"></i>
+                    <input class="form-control search-input" type="search" placeholder="Search...">
+                </div>
+                <a href="cart.html" class="cart-icon ms-2">
+                    <i class="bi bi-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <!-- Toggle Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Navbar Content -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+                <!-- Menu Items -->
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Menu</a>
                     </li>
@@ -411,7 +429,9 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
-                <div class="d-flex align-items-center">
+                
+                <!-- Desktop Search and Cart (hidden on mobile) -->
+                <div class="d-none d-lg-flex align-items-center">
                     <div class="search-container me-3">
                         <i class="bi bi-search search-icon"></i>
                         <input class="form-control search-input" type="search" placeholder="Search for dishes...">
@@ -435,6 +455,96 @@
             </div>
         </div>
     </nav>
+    
+    <style>
+        /* Mobile-specific styles */
+        @media (max-width: 991.98px) {
+            .mobile-icons {
+                display: flex !important;
+                order: 2;
+                margin-left: auto;
+            }
+            
+            .search-container {
+                position: relative;
+                width: 150px; /* Smaller width for mobile */
+            }
+            
+            .search-input {
+                padding-left: 35px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+            
+            .search-icon {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 4;
+                color: #6c757d;
+            }
+            
+            .cart-icon {
+                position: relative;
+                font-size: 1.2rem;
+                color: #212529;
+            }
+            
+            .cart-count {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                background: var(--primary-color);
+                color: white;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+                font-size: 0.7rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Hide desktop version on mobile */
+            .d-none.d-lg-flex {
+                display: none !important;
+            }
+            
+            /* Adjust navbar toggler position */
+            .navbar-toggler {
+                order: 1;
+            }
+        }
+        
+        /* Desktop styles */
+        @media (min-width: 992px) {
+            .mobile-icons {
+                display: none !important;
+            }
+        }
+    </style>
+    
+    <script>
+        // Make mobile search functional
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileSearchIcon = document.querySelector('.mobile-icons .search-icon');
+            const mobileSearchInput = document.querySelector('.mobile-icons .search-input');
+            
+            mobileSearchIcon.addEventListener('click', function() {
+                mobileSearchInput.focus();
+            });
+            
+            // You can add search functionality here
+            mobileSearchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    // Perform search action
+                    console.log('Searching for:', this.value);
+                    // window.location.href = 'search.html?q=' + encodeURIComponent(this.value);
+                }
+            });
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero">
